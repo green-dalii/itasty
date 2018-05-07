@@ -183,3 +183,10 @@ p{
     display: inline-block;
     font-size: 14px;
 }
+.coding {
+    position: absolute;
+    bottom: 0%;
+}
+.coding-img {
+    width: 15%;
+}
