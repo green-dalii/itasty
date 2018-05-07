@@ -171,7 +171,7 @@ p{
 
 .contenner{
     background: url("../img/bg.jpg");
-    background-size: 100%;
+    background-size: cover;
     height: -webkit-fill-available;
     background-repeat: no-repeat;
 }
