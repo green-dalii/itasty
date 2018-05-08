@@ -11,13 +11,13 @@
     outline: 0;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     border-bottom: 1px solid #ccc;
-    background-color: #fff;
-    color: #ccc;
+    background-color: rgba(255,255,255,0.6);
+    color: #000000;
     cursor: pointer;
 }
 
 .city-picker-span > .placeholder {
-    color: #aaa;
+    color: #000000;
 }
 
 .city-picker-span > .arrow {
@@ -30,10 +30,10 @@
     background: url(../img/drop-arrow.png) -10px -25px no-repeat;
 }
 
-.city-picker-span.focus,
+/* .city-picker-span.focus,
 .city-picker-span.open {
     border-bottom-color: #46A4FF;
-}
+} */
 
 .city-picker-span.open > .arrow {
     background-position: -10px -10px;
