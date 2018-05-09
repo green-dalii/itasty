@@ -50,7 +50,7 @@
 }
 
 .city-picker-dropdown {
-    position: absolute;
+    position: static;
     width: 315px;
     left: -9999px;
     top: -9999px;
@@ -63,7 +63,7 @@
 }
 
 .city-select-wrap {
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.6);
 }
 
 .city-select-tab {
