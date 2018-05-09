@@ -48,7 +48,10 @@ body {
     color: #333;
     line-height: 1.8;
     letter-spacing: 0.08rem;
-    font-family: open sans, helvetica neue, helvetica, arial, sans-serif
+    font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, Heiti, “黑体”, sans-serif
+}
+::selection{
+    background-color: #FFBB00;
 }
 
 .logo {
@@ -188,7 +191,11 @@ p{
     bottom: 0%;
 }
 .coding-img {
-    width: 15%;
+    width: 30px;
+}
+
+footer {
+    max-width: 10px;
 }
 
 .row{
