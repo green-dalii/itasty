@@ -194,6 +194,20 @@ p{
 .row{
     margin: 0px;
 }
-button {
+.search_btn {
     width: inherit;
+    margin: 5px;
+}
+
+.search_btn:hover {
+    background-color: #FFBB00
+    
+}
+
+/* .search_btn:focus {
+    background-color: #CF9800
+} */
+
+.search_btn:active {
+    background-color: #FFCC3E
 }
