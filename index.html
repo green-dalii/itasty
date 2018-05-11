@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
-    <title>Tasty</title>
+    <title>Tasty - 搜巷子</title>
     <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link href="lib/city-picker.css" rel="stylesheet">
     <link href="lib/index.css" rel="stylesheet">
@@ -20,21 +20,24 @@
                 <img src="img/logo.png" alt="">
             </div> -->
             <div class="descript">
-                <h3>酒香不怕巷子深</h3>
-                <h5>Good wine needs no bush</h5>
+                <h4>酒香不怕巷子深</h4>
+                <h6>Good wine needs no bush</h6>
                 <h6>基于星云链的城市冷门美食搜集点！</h6>
             </div>
         </div>
         <div class="noExtension hide" id="noExtension">
-            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>            to use SUPER DICTIONARY
+            哎呀...Tasty 需要 Chrome 浏览器运行并安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">星云钱包浏览器插件</a>才可正常使用。
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-sm-10 col-md-6" style="position: relative;">
+        <div class="row justify-content-center align-items-center" id=search-area>
+            <div class="col-12 col-sm-10 col-md-8" style="position: relative;">
                 <!-- container -->
-                <input readonly type="text" data-toggle="city-picker" style="width:100%;">
+                <input readonly type="text" id=location data-toggle="city-picker" style="width:100%;">
+            </div>
+            <div class="col-4 col-sm-2 col-md-4 align-self-center">
+                <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜 巷 子</button>
             </div>
             <div class="col-4 col-sm-2 col-md-6 align-self-center">
-                <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜 巷 子</button>
+                <button type="button" class="search_btn btn btn-light btn-lg" id=search2>Set</button>
             </div>
         </div>
         <div class="row">

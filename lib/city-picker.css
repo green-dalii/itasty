@@ -46,7 +46,7 @@
 }
 
 .city-picker-span > .title > span:hover {
-    background-color: #f1f8ff;
+    background-color: #FFBB00;
 }
 
 .city-picker-dropdown {
@@ -89,7 +89,7 @@
 .city-select-tab > a.active {
     background: #fff;
     border-bottom: 1px solid #fff;
-    color: #46A4FF;
+    color: #FFBB00;
 }
 
 .city-select-tab > a:first-child {
@@ -150,13 +150,13 @@
 
 .city-select a:hover,
 .city-select a:focus {
-    background-color: #f1f8ff;
+    background-color: #FFE394;
     border-radius: 2px;
-    color: #46A4FF;
+    color: #FFBB00;
 }
 
 .city-select a.active {
-    background-color: #46A4FF;
+    background-color: #FFBB00;
     color: #fff;
     border-radius: 2px;
 }
