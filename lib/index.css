@@ -233,6 +233,11 @@ footer {
     margin: 5px;
 }
 
+.btn-submit {
+    position: relative;
+    width: 100%;
+}
+
 .add-btn:hover {
     background-color: #FFBB00;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4)
