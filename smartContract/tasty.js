@@ -14,7 +14,8 @@ var TastyItem = function (text) {
         this.finder = obj.finder;
         this.like = obj.like;
         this.dislike = obj.dislike;
-        this.id = obj.id
+        this.id = obj.id;
+        this.tags = obj.tags;
         this.others = obj.others;
     } else {
         this.key = "";
@@ -29,6 +30,7 @@ var TastyItem = function (text) {
         this.like = 0;
         this.dislike = 0;
         this.id = "";
+        this.tags = "";
         this.others = "";
     }
 };
@@ -65,12 +67,14 @@ TastyDictionary.prototype = {
         // this.size = 0
     },
 
-    save: function (key, location, name, category, recommend) {
+    save: function (key, location, name, category, recommend, tags, others) {
         var _key = key.trim()
         var _location = location.trim();
         var _name = name.trim();
         var _category = category.trim()
         var _recommend = recommend
+        var _tags = tags
+        var _others = others
         var _finder = Blockchain.transaction.from;
         var tastyItem = new TastyItem()
         tastyItem.key = _key
@@ -110,15 +114,18 @@ TastyDictionary.prototype = {
             throw new Error("empty item")
         }
         // return itemIdList
-        var p=[]
+        var p = []
         var that = this
-        itemIdList.forEach(function(item,index) {
+        itemIdList.forEach(function (item, index) {
             var temp = that.itemMap.get(item)
             p.push(temp.recommend)
         });
         return p;
     },
-
+    comment: function (key, like, dislike, comment) {
+        null;
+    }
+    ,
     test: function () {
         return 'Test Message from Nebulas!'
     }
