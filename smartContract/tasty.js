@@ -100,13 +100,13 @@ TastyDictionary.prototype = {
         locationKey = locationKey.trim();
         if (locationKey === "") {
             console.log('No input')
-            return "empty key"
+            return 0
             throw new Error("empty key")
         }
         var itemIdList = this.locationMap.get(locationKey)
         if (itemIdList === null) {
             console.log('No item')
-            return "empty item"
+            return -1
             throw new Error("empty item")
         }
         // return itemIdList
