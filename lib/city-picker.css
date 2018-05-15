@@ -14,7 +14,13 @@
     background-color: rgba(255,255,255,0.6);
     color: #000000;
     cursor: pointer;
+    width: inherit;
 }
+
+/* .alaet {
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.5)
+} */
 
 .city-picker-span > .placeholder {
     color: #000000;
