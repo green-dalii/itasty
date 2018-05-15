@@ -165,7 +165,28 @@ h1, h2, h3, h4, h5, h6,
     color: #fff;
 }
 
+.result_success {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    background: inherit;
+    z-index: 1;
+    margin-top: 50px;
+    /* color: #fff; */
+}
 
+.result_success::before {
+    content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin:-30px;
+    z-index:-1;
+    filter: blur(30px);
+    background: inherit
+}
 
 .add_banner{
     width: 60%;
@@ -258,7 +279,10 @@ footer {
     position: relative;
     width: 100%;
 }
-
+.add-btn {
+    margin-top: 30px;
+    width: inherit;
+}
 .add-btn:hover {
     background-color: #FFBB00;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4)
