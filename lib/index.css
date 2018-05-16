@@ -1,54 +1,13 @@
-/* #tabs {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-#tabs li {
-    float: left;
-    margin: 0;
-}
-
-#tabs li a {
-    position: relative;
-    padding: 10px 50px;
-    float: left;
-    text-decoration: none;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
-}
-
-.ccc {
-    background-color: black;
-}
-
-.ccc a {
-    color: #fff;
-}
-
-.current a {
-    outline: 0;
-    z-index: 4;
-}
-
-.hoverItem a {
-    background: black;
-    color: #fff;
-}
-
-.tab {
-    display: none;
-}
-
-.show {
-    display: block;
-} */
-
 body {
     color: #333;
     line-height: 1.8;
     letter-spacing: 0.08rem;
     font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, Heiti, “黑体”, sans-serif
+}
+
+.card-title {
+    text-align: start;
+    color: #FFBB00;
 }
 
 form {
@@ -212,7 +171,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 p{
-    text-indent:2em;
     font-size: 20px;
 }
 
@@ -279,13 +237,36 @@ footer {
     position: relative;
     width: 100%;
 }
+
+.add-row{
+    position: relative;
+    padding: 40px;
+    background: inherit;
+    z-index: 1;
+    color: #fff;
+}
+.add-row::before {
+    content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+    z-index:-1;
+    filter: blur(10px);
+    background: inherit
+}
+
 .add-btn {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     width: inherit;
 }
 .add-btn:hover {
     background-color: #FFBB00;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4)
+}
+.search_btn {
+    margin: 5px 0px;
 }
 
 .search_btn:hover {
@@ -308,4 +289,59 @@ footer {
 .add-form {
     max-width: 500px;
     margin: auto;
+}
+
+/* Back to top button
+---------------------------------- */
+#back-top {
+    position: fixed;
+    z-index: 1000;
+    bottom: 40px;
+    right: 50px;
+}
+#back-top a {
+    width: 60px;
+    height: 60px;
+    display: block;
+    text-align: center;
+    font: 11px/100% Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 35px;
+    box-shadow: 2px 6px 5px rgba(0,0,0,0.19);
+    color: #FFFFFF;
+    background: #FFBB00;
+    /* background color transition */
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+#back-top a:hover {
+    background: #FFD258;
+}
+/* arrow icon (span tag) */
+#back-top i {
+    margin-top: 15px;
+    font-size: 28px;
+    position: absolute;
+    left: -18px;
+}
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+#back-top {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+}
+#back-top a {
+    width: 40px;
+    height: 40px;
+}
+#back-top i {
+    margin-top: 7px;
+    margin-left: -9px;
+    font-size: 20px;
+}
 }

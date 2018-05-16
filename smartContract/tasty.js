@@ -118,7 +118,7 @@ TastyDictionary.prototype = {
         var that = this
         itemIdList.forEach(function (item, index) {
             var temp = that.itemMap.get(item)
-            p.push(temp.recommend)
+            p.push(temp)
         });
         return p;
     },
