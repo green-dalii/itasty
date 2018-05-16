@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
-    <title>Tasty - 搜巷子</title>
+    <title>iTasty - 搜巷子</title>
     <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link href="lib/city-picker.css" rel="stylesheet">
     <link href="lib/index.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 <body>
     <div class="contenner">
         <div class="logo">
-            <div class="name">Tasty</div>
+            <div class="name">iTasty</div>
             <!-- <div class="img logo_rotate">
                 <img src="img/logo.png" alt="">
             </div> -->
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="noExtension hide" id="noExtension">
-            哎呀...Tasty 需要 Chrome 浏览器运行并安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">星云钱包浏览器插件</a>才可正常使用。
+            哎呀...Tasty 需要 Chrome 浏览器并安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">星云钱包浏览器插件</a>才可正常使用。
         </div>
         <div class="row justify-content-center align-items-center" id=search-area>
             <div class="col-12 col-sm-10 col-md-8 col-lg-4 align-self-center" style="position: relative;">
@@ -36,9 +36,11 @@
             <div class="col-4 col-sm-2 col-md-4 col-lg-4 align-self-center">
                 <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜巷子</button>
             </div>
-            <!-- <div class="col-4 col-sm-2 col-md-6 align-self-center">
-                <button type="button" class="search_btn btn btn-light btn-lg" id=search2>Set</button>
-            </div> -->
+        </div>
+        <div class="row justify-content-center" id=add-area>
+            <div class="col-3">
+                <button type="button" class="add-btn btn btn-light btn-lg hide" id=add-btn>提供情报</button>
+            </div>
         </div>
         <!-- <div class="row">
             <div>
@@ -62,7 +64,7 @@
             <button id="push">submit</button>
         </div>
     </div>
-    <!-- Modal 1 -->
+    <!-- Modal add-on -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -79,8 +81,7 @@
         </div>
         </div>
     </div>
-    <!-- Modal -->
-    <!-- Modal 2 -->
+    <!-- Modal no-result -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -97,8 +98,7 @@
         </div>
         </div>
     </div>
-    <!-- Modal -->
-    <!-- Modal 2 -->
+    <!-- Modal no-location -->
     <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -114,7 +114,39 @@
         </div>
         </div>
     </div>
-    <!-- Modal -->
+    <!-- Modal wating -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info" id="push-loading" role="alert">正将您的Tasty情报写入到区块链中永久保存...稍后区块同步完毕后便可查询您的信息</div>
+                <!-- <div class="alert alert-success hide" id="push-success" role="alert">您的Tasty情报已成功写入区块链永久保存！</div> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal" disabled=true>好的</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal fail -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" id="push-fail" role="alert">写入区块链失败，请检查网络或钱包余额</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal">好的</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Form -->
     <div class="add-form hide" id="add-form">
         <form>
