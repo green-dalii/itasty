@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-
+    <link rel="icon" href="img/favicon.ico">
     <title>iTasty - 搜巷子</title>
-    <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/city-picker.css" rel="stylesheet">
     <link href="lib/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
             <div class="descript">
                 <h4>酒香不怕巷子深</h4>
                 <h6>Good wine needs no bush</h6>
-                <h6>基于区块链的城市冷门美食搜集点！</h6>
+                <h6>构建于区块链的城市冷门美食搜集点！</h6>
             </div>
         </div>
         <div class="noExtension hide" id="noExtension">
@@ -33,36 +35,41 @@
                 <!-- container -->
                 <input readonly type="text" id=location data-toggle="city-picker" style="width:100%;">
             </div>
-            <div class="col-4 col-sm-2 col-md-4 col-lg-4 align-self-center">
+            <div class="col-12 col-sm-2 col-md-4 col-lg-4 align-self-center">
                 <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜巷子</button>
             </div>
         </div>
-        <div class="row justify-content-center" id=add-area>
-            <div class="col-3">
-                <button type="button" class="add-btn btn btn-light btn-lg hide" id=add-btn>提供情报</button>
-            </div>
+        <div class="card-deck-wrapper hide" id="cards-hub">
+            <div class="card-deck" id="cards-deck"></div>
         </div>
         <!-- <div class="row">
             <div>
                 <input id="search_value" type="text">
             </div>
         </div> -->
-        <div class="result_success hide">
+        <!-- <div class="result_success hide">
             <div id=search_banner></div>
             <p id=search_result> wait for content </p>
             <div class="author">
                 <i><p> Author:</p> <p id=search_result_author> dasdajkajksdhjasdkjahdkjad</p></i>
             </div>
-        </div>
+        </div> -->
 
         <div class="result_faile hide">
             嘿～这个地方的冷门美食还藏在巷子里呢，点击 <button class="add-btn btn" id="add">添加情报</button> 让它显露出来吧！
         </div>
-
-        <div class="add_banner hide">
+        <div class="row add-row justify-content-center align-items-center hide" id=add-area>
+            <div class="col-12 col-sm-3" id="add-des">
+                <h6>没有了...</h6>
+            </div>
+            <div class="col-12 col-sm-3">
+                <button type="button" class="add-btn btn btn-light btn-lg" id=add-btn>提供情报</button>
+            </div>
+        </div>
+        <!-- <div class="add_banner hide">
             <input type="text" id="add_value" placeholder="input contents for your keyword">
             <button id="push">submit</button>
-        </div>
+        </div> -->
     </div>
     <!-- Modal add-on -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -72,10 +79,10 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <p>要使用 Tasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展</p>
+                <p>要使用 Tasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展，安装完毕后刷新便可使用。</p>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">算了吧</button>
+            <button type="button" class="btn btn-default" id="letitgo" data-dismiss="modal">算了吧</button>
             <button type="button" class="btn btn-primary" onclick="window.open('https://github.com/ChengOrangeJu/WebExtensionWallet')">带我去安装钱包插件</button>
             </div>
         </div>
@@ -92,7 +99,7 @@
                 <p>嘿～这个地方的冷门美食还藏在巷子里呢,要不要提供情报来让大家发现它呢？</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">算了吧</button>
+                <button type="button" class="btn btn-default" id="let-it-go">算了吧</button>
                 <button type="button" class="btn btn-primary" id="add-form-button">提供情报</button>
             </div>
         </div>
@@ -195,117 +202,21 @@
             <button type="button" id="btn-submit" class="btn btn-primary btn-submit">提交</button>
         </form>
     </div>
+    <p id="back-top">
+        <a href="#top"><i class="fa fa-angle-up"></i></a>
+    </p>
     <footer class="coding">
         <img class="coding-img" src="img/coding.png">
     </footer>
-    <script src=lib/jquery-3.3.1.min.js></script>
+    <!-- <script src=lib/jquery-3.3.1.min.js></script> -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src=lib/nebPay.js></script>
-    <script src=lib/bootstrap-4.0.0-dist/js/bootstrap.min.js></script>
+    <!-- <script src=lib/bootstrap-4.0.0-dist/js/bootstrap.min.js></script> -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src=lib/pages.js></script>
     <script src=lib/city-picker.data.min.js></script>
     <script src=lib/city-picker.min.js></script>
     <script src=lib/nebAction.js></script>
-    <!-- <script>
-        var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
-        var nebPay = new NebPay();
-
-        $("#search_value").attr("disabled", true)
-        $("#search").attr("disabled", true)
-
-
-        //to check if the extension is installed
-        //if the extension is installed, var "webExtensionWallet" will be injected in to web page
-        if (typeof (webExtensionWallet) === "undefined") {
-            //alert ("Extension wallet is not installed, please install it first.")
-            $("#noExtension").removeClass("hide")
-        } else {
-            $("#search_value").attr("disabled", false)
-            $("#search").attr("disabled", false)
-        }
-
-        var dappAddress = "n1fwkf7AgDvYDt8JM1q59W4DE7R6jokQTLE";
-
-        // 搜索功能: 查找Super-Dictionary 中有没有该词条
-        $("#search").click(function () {
-            // $("#search_value").val() 搜索框内的值
-
-            var to = dappAddress;
-            var value = "0";
-            var callFunction = "get";
-            var callArgs = "[\"" + $("#search_value").val() + "\"]"; //in the form of ["args"]
-            nebPay.simulateCall(to, value, callFunction, callArgs, {    //使用nebpay的simulateCall接口去执行get查询, 模拟执行.不发送交易,不上链
-                listener: cbSearch      //指定回调函数
-            });
-        })
-
-        //return of search,
-        function cbSearch(resp) {
-            var result = resp.result
-            console.log("return of rpc call: " + JSON.stringify(result))
-
-            if (result === 'null') {
-                $(".add_banner").addClass("hide");
-                $(".result_success").addClass("hide");
-
-                $("#result_faile_add").text($("#search_value").val())
-
-                $(".result_faile").removeClass("hide");
-            } else {
-                //if result is not null, then it should be "return value" or "error message"
-                try {
-                    result = JSON.parse(result)
-                } catch (err) {
-                    //result is the error message
-                }
-
-                if (!!result.key) {      //"return value"
-                    $(".add_banner").addClass("hide");
-                    $(".result_faile").addClass("hide");
-
-                    $("#search_banner").text($("#search_value").val())
-                    $("#search_result").text(result.value)
-                    $("#search_result_author").text(result.author)
-
-                    $(".result_success").removeClass("hide");
-                } else {        //"error message"
-                    $(".add_banner").addClass("hide");
-                    $(".result_faile").addClass("hide");
-
-                    $("#search_banner").text($("#search_value").val())
-                    $("#search_result").text(result)
-                    $("#search_result_author").text("")
-
-                    $(".result_success").removeClass("hide");
-                }
-
-            }
-
-        }
-
-        // 添加信息功能: 像super-dictionary 中添加词条
-        $("#add").click(function () {
-            $(".result_faile").addClass("hide");
-            $(".add_banner").removeClass("hide");
-
-            $("#add_value").val("")
-        })
-
-        $("#push").click(function () {
-
-            var to = dappAddress;
-            var value = "0";
-            var callFunction = "save"
-            var callArgs = "[\"" + $("#search_value").val() + "\",\"" + $("#add_value").val() + "\"]"
-
-            nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
-                listener: cbPush
-            });
-        });
-
-        function cbPush(resp) {
-            console.log("response of push: " + resp)
-        }
-
-    </script> -->
 </body>
 
 </html>
