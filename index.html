@@ -39,8 +39,10 @@
                 <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜巷子</button>
             </div>
         </div>
-        <div class="card-deck-wrapper hide" id="cards-hub">
-            <div class="card-deck" id="cards-deck"></div>
+        <div class="row justify-content-center align-items-center">
+            <div class="card-deck-wrapper hide" id="cards-hub">
+                <div class="card-deck" id="cards-deck"></div>
+            </div>
         </div>
         <!-- <div class="row">
             <div>
@@ -55,9 +57,9 @@
             </div>
         </div> -->
 
-        <div class="result_faile hide">
+        <!-- <div class="result_faile hide">
             嘿～这个地方的冷门美食还藏在巷子里呢，点击 <button class="add-btn btn" id="add">添加情报</button> 让它显露出来吧！
-        </div>
+        </div> -->
         <div class="row add-row justify-content-center align-items-center hide" id=add-area>
             <div class="col-12 col-sm-3" id="add-des">
                 <h6>没有了...</h6>
@@ -70,89 +72,6 @@
             <input type="text" id="add_value" placeholder="input contents for your keyword">
             <button id="push">submit</button>
         </div> -->
-    </div>
-    <!-- Modal add-on -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <p>要使用 Tasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展，安装完毕后刷新便可使用。</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-default" id="letitgo" data-dismiss="modal">算了吧</button>
-            <button type="button" class="btn btn-primary" onclick="window.open('https://github.com/ChengOrangeJu/WebExtensionWallet')">带我去安装钱包插件</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- Modal no-result -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <p>嘿～这个地方的冷门美食还藏在巷子里呢,要不要提供情报来让大家发现它呢？</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="let-it-go">算了吧</button>
-                <button type="button" class="btn btn-primary" id="add-form-button">提供情报</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- Modal no-location -->
-    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <p>请选择搜巷子的省市区</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">好的</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- Modal wating -->
-    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-info" id="push-loading" role="alert">正将您的Tasty情报写入到区块链中永久保存...稍后区块同步完毕后便可查询您的信息</div>
-                <!-- <div class="alert alert-success hide" id="push-success" role="alert">您的Tasty情报已成功写入区块链永久保存！</div> -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal" disabled=true>好的</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    <!-- Modal fail -->
-    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-danger" id="push-fail" role="alert">写入区块链失败，请检查网络或钱包余额</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal">好的</button>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- Form -->
     <div class="add-form hide" id="add-form">
@@ -201,6 +120,89 @@
             </div>
             <button type="button" id="btn-submit" class="btn btn-primary btn-submit">提交</button>
         </form>
+    </div>
+    <!-- Modal add-on -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p>要使用 Tasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展，安装完毕后刷新便可使用。</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="letitgo" data-dismiss="modal">算了吧</button>
+            <button type="button" class="btn btn-primary" onclick="window.open('https://github.com/ChengOrangeJu/WebExtensionWallet')">带我去安装钱包插件</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal no-result -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p>嘿～这个地方的冷门美食还藏在巷子里呢,要不要提供情报来让大家发现它呢？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="let-it-go">算了吧</button>
+                <button type="button" class="btn btn-primary" id="add-form-button">提供情报</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal no-location -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p>搜巷子需要具体到省市区/县哦</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal wating -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-info" id="push-loading" role="alert">正将您的Tasty情报写入到区块链中永久保存...稍后区块同步完毕后便可查询您的信息</div>
+                <!-- <div class="alert alert-success hide" id="push-success" role="alert">您的Tasty情报已成功写入区块链永久保存！</div> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal" disabled=true>好的</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal fail -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" id="push-fail" role="alert">写入区块链失败，请检查网络或钱包余额</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal">好的</button>
+                </div>
+            </div>
+        </div>
     </div>
     <p id="back-top">
         <a href="#top"><i class="fa fa-angle-up"></i></a>
