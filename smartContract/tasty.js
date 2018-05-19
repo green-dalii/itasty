@@ -7,7 +7,8 @@ var TastyItem = function (text) {
         // this.value = obj.value;
         this.timestamp = obj.timestamp;
         this.location = obj.location;
-        this.latitude_longitude = obj.latitude_longitude;
+        this.latitude = obj.latitude;
+        this.longitude = obj.longitude;
         this.name = obj.name;
         this.category = obj.category;
         this.recommend = obj.recommend;
@@ -22,7 +23,8 @@ var TastyItem = function (text) {
         // this.value = "";
         this.timestamp = "";
         this.location = "";
-        this.latitude_longitude = "";
+        this.latitude = "";
+        this.longitude = "";
         this.name = "";
         this.category = "";
         this.recommend = "";
@@ -67,9 +69,11 @@ TastyDictionary.prototype = {
         // this.size = 0
     },
 
-    save: function (key, location, name, category, recommend, tags, others) {
+    save: function (key, location, longitude, latitude, name, category, recommend, tags, others) {
         var _key = key.trim()
         var _location = location.trim();
+        var _longitude = Number(longitude);
+        var _latitude = Number(latitude);
         var _name = name.trim();
         var _category = category.trim()
         var _recommend = recommend
@@ -79,14 +83,18 @@ TastyDictionary.prototype = {
         var tastyItem = new TastyItem()
         tastyItem.key = _key
         tastyItem.location = _location
+        tastyItem.longitude = _longitude
+        tastyItem.latitude = _latitude
         tastyItem.finder = _finder
         tastyItem.name = _name
         tastyItem.category = _category
         tastyItem.recommend = _recommend
+        tastyItem.tags = _tags
         tastyItem.timestamp = String(Date.now())
         tastyItem.id = _finder + tastyItem.timestamp
         tastyItem.like = 0
         tastyItem.dislike = 0
+        tastyItem.others = _others
         var idList = this.locationMap.get(_key)
         if (idList != null) {
             idList.push(tastyItem.id)

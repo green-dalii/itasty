@@ -233,7 +233,7 @@ footer {
     position: relative;
     width: 100%;
 }
-
+/* add-form */
 .add-row{
     position: relative;
     padding: 40px;
@@ -261,6 +261,13 @@ footer {
     background-color: #FFBB00;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4)
 }
+#add-map {
+    width: inherit;
+    height: 250px;
+}
+.row-map{
+    display: block;
+}
 .search_btn {
     margin: 5px 0px;
 }
@@ -283,22 +290,54 @@ footer {
 }
 
 .add-form {
-    max-width: 500px;
+    max-width: inherit;
     margin: auto;
 }
+
+/* maodal */
+.modal-title {
+    color:#FFBB00;
+}
+
  /* Cards */
+.cards-area {
+    margin-top: 80px;
+}
+@media (min-width: 576px){
+.card-deck-wrapper {
+    width: 60%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+}
+@media (max-width: 576px){
 .card-deck-wrapper {
     width: 80%;
-    margin: auto;
+}}
+.card-deck {
+    margin-bottom: 10px;
+    flex-flow: column wrap;
 }
+.card {
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.24);
+    margin-bottom: 20px;
+}
+@media (min-width: 576px){
+.card-deck .card{
+    margin-bottom: 20px;
+}
+}
+
 .map {
     height: 150px;
 }
 .card-title {
     text-align: start;
     color: #FFBB00;
-    font-size: 25px;
+    font-size: 2rem;
     font-weight: bold;
+    cursor: pointer;
 }
 .card-category {
     margin-top: -1rem;
@@ -309,13 +348,66 @@ footer {
 .card-rec {
     border-bottom: 1px solid; 
     color: #FF5722; 
-    margin-bottom:0rem
+    margin-bottom:0rem;
+    font-size: 0.8rem;
+}
+.card-loc {
+    border-bottom: 1px solid; 
+    color: #b94900; 
+    margin-bottom:0rem;
+    font-size: 0.8rem;
 }
 .card-recommand {
-    font-size: 15px;
+    font-size: 1.3rem;
     font-weight: lighter;
+    color: #FF5722;
 }
-
+.card-location {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #b94900
+}
+.card-footer {
+    text-align: right;
+    font-size: 0.2rem;
+    color: #545454;
+}
+/* label */
+.label {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.label-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 1rem;
+}
+.label-main {
+    background-color: #1C9118;
+}
+.label-snack {
+    background-color: #6DDB52;
+}
+.label-sweet {
+    background-color: #F07C4E;
+}
+.label-drink {
+    background-color: #46CDDF;
+}
+.label-others {
+    background-color: #B371C0;
+}
+.label-tags {
+    background: #FFBB00;
+    margin: 2px;
+    font-size: 0.5rem;
+}
 /* Back to top button
 ---------------------------------- */
 #back-top {

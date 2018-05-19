@@ -11,7 +11,7 @@
     <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="lib/city-picker.css" rel="stylesheet">
     <link href="lib/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="noExtension hide" id="noExtension">
-            哎呀...Tasty 需要 Chrome 浏览器并安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">星云钱包浏览器插件</a>才可正常使用。
+            哎呀...iTasty 需要 Chrome 浏览器并安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">星云钱包浏览器插件</a>才可正常使用。
         </div>
         <div class="row justify-content-center align-items-center" id=search-area>
             <div class="col-12 col-sm-10 col-md-8 col-lg-4 align-self-center" style="position: relative;">
@@ -39,9 +39,9 @@
                 <button type="button" class="search_btn btn btn-light btn-lg" id=search>搜巷子</button>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center" id="cards-area">
             <div class="card-deck-wrapper hide" id="cards-hub">
-                <div class="card-deck" id="cards-deck"></div>
+                <div class='card-deck' id='cards-deck'></div>
             </div>
         </div>
         <!-- <div class="row">
@@ -62,7 +62,7 @@
         </div> -->
         <div class="row add-row justify-content-center align-items-center hide" id=add-area>
             <div class="col-12 col-sm-3" id="add-des">
-                <h6>没有了...</h6>
+                <h6 id="loading-text">载入中...</h6>
             </div>
             <div class="col-12 col-sm-3">
                 <button type="button" class="add-btn btn btn-light btn-lg" id=add-btn>提供情报</button>
@@ -73,119 +73,71 @@
             <button id="push">submit</button>
         </div> -->
     </div>
-    <!-- Form -->
-    <div class="add-form hide" id="add-form">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputLocation">省/市/区(县)</label>
-                    <input type="text" class="form-control" id="inputLocation">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputStreet">街道地址</label>
-                    <input type="text" class="form-control" id="inputStreet">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputName">店名</label>
-                    <input type="email" class="form-control" id="inputName" placeholder="">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputCategory">所属类别</label>
-                    <select id="inputCategory" class="form-control">
-                        <option selected>主食</option>
-                        <option>小吃</option>
-                        <option>甜品</option>
-                        <option>饮品</option>
-                        <option>其他</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputRecommand">冷门美食名称</label>
-                <input type="text" class="form-control" id="inputRecommand" placeholder="若有多个，用空格隔开">
-            </div>
-            <div class="form-group">
-                <label for="inputTag">标签</label>
-                <input type="text" class="form-control" id="inputTag" placeholder="若有多个，用空格隔开，如：麻辣 川菜">
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div>
-            <button type="button" id="btn-submit" class="btn btn-primary btn-submit">提交</button>
-        </form>
-    </div>
     <!-- Modal add-on -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>要使用 iTasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展，安装完毕后刷新便可使用。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="letitgo" data-dismiss="modal">算了吧</button>
+                    <button type="button" class="btn btn-primary" onclick="window.open('https://github.com/ChengOrangeJu/WebExtensionWallet')">带我去安装钱包插件</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>要使用 Tasty ,需使用Chrome浏览器并安装Nebulas钱包插件扩展，安装完毕后刷新便可使用。</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-default" id="letitgo" data-dismiss="modal">算了吧</button>
-            <button type="button" class="btn btn-primary" onclick="window.open('https://github.com/ChengOrangeJu/WebExtensionWallet')">带我去安装钱包插件</button>
-            </div>
-        </div>
         </div>
     </div>
     <!-- Modal no-result -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>嘿～这个地方的冷门美食还藏在巷子里呢,要不要提供情报来让大家发现它呢？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="let-it-go">算了吧</button>
+                    <button type="button" class="btn btn-primary" id="add-form-button">提供情报</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>嘿～这个地方的冷门美食还藏在巷子里呢,要不要提供情报来让大家发现它呢？</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="let-it-go">算了吧</button>
-                <button type="button" class="btn btn-primary" id="add-form-button">提供情报</button>
-            </div>
-        </div>
         </div>
     </div>
     <!-- Modal no-location -->
     <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>搜巷子需要具体到省市区/县哦</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">好的</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>搜巷子需要具体到省市区/县哦</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">好的</button>
-            </div>
-        </div>
         </div>
     </div>
     <!-- Modal wating -->
     <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info" id="push-loading" role="alert">正将您的iTasty情报写入到区块链中永久保存...稍后区块同步完毕后便可查询您的信息</div>
+                    <!-- <div class="alert alert-success hide" id="push-success" role="alert">您的Tasty情报已成功写入区块链永久保存！</div> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal">好的</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="alert alert-info" id="push-loading" role="alert">正将您的Tasty情报写入到区块链中永久保存...稍后区块同步完毕后便可查询您的信息</div>
-                <!-- <div class="alert alert-success hide" id="push-success" role="alert">您的Tasty情报已成功写入区块链永久保存！</div> -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal" disabled=true>好的</button>
-            </div>
-        </div>
         </div>
     </div>
     <!-- Modal fail -->
@@ -200,6 +152,127 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" id="push-ok-btn" data-dismiss="modal">好的</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add-form -->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">提供iTasty情报</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form -->
+                    <div class="add-form" id="add-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputLocation">省/市/区(县)</label>
+                                    <input type="text" class="form-control" id="inputLocation">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputStreet">街道地址</label>
+                                    <input type="text" class="form-control" id="inputStreet" placeholder="输入街道或点击地图选择">
+                                </div>
+                            </div>
+                            <div class="form-row row-map">
+                                <div id="add-map"></div>
+                                <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.2&key=6afd74f46ef9252cfba561a9cb134f25&callback=init"></script>
+                                <!-- <script src=lib/map.js></script> -->
+                                <script type="text/javascript">
+                                    //map
+                                    window.init = function () {
+                                        var map = new AMap.Map('add-map', {
+                                            resizeEnable: true,
+                                            zoom: 13,
+                                            // center: [116.39, 39.9]
+                                        });
+                                        // localStorage.setItem('AMap',JSON.stringify(AMap))
+                                        // console.log('@@@@@',AMap)
+                                        // localStorage.setItem('map', JSON.stringify(map))
+                                        AMap.plugin('AMap.Geocoder', function () {
+                                            var _city = $("#location").val().split('/')[1]
+                                            var geocoder = new AMap.Geocoder({
+                                                city: "",//城市，默认：“全国”
+                                            });
+                                            var marker = new AMap.Marker({
+                                                map: map,
+                                                bubble: true
+                                            })
+                                            geocoder.getLocation(_city, function (status, result) {
+                                                if (status == 'complete' && result.geocodes.length) {
+                                                    // console.log('MMMMM')
+                                                    marker.setPosition(result.geocodes[0].location);
+                                                    map.setCenter(marker.getPosition())
+                                                    // document.getElementById('message').innerHTML = ''
+                                                } else {
+                                                    // console.log('NNNNNNNn')
+                                                    // document.getElementById('message').innerHTML = '获取位置失败'
+                                                }
+                                            })
+                                            var input = document.getElementById('inputStreet')
+                                            map.on('click', function (e) {
+                                                marker.setPosition(e.lnglat);
+                                                geocoder.getAddress(e.lnglat, function (status, result) {
+                                                    if (status == 'complete') {
+                                                        input.value = result.regeocode.formattedAddress
+                                                        // console('click:::Long-Lati:::',e.lnglat.getLng(),e.lnglat.getLat())
+                                                        localStorage.setItem('add_lng',e.lnglat.getLng())
+                                                        localStorage.setItem('add_lat',e.lnglat.getLat())
+                                                    }
+                                                })
+                                            })
+                                            input.onchange = function (e) {
+                                                var address = input.value;
+                                                geocoder.getLocation(address, function (status, result) {
+                                                    if (status == 'complete' && result.geocodes.length) {
+                                                        marker.setPosition(result.geocodes[0].location);
+                                                        map.setCenter(marker.getPosition())
+                                                        localStorage.setItem('add_lng',marker.getPosition().getLng())
+                                                        localStorage.setItem('add_lat',marker.getPosition().getLat())
+                                                        // console.log('iput::::',marker.getPosition().getLng(),marker.getPosition().getLat())
+                                                    } else {
+
+                                                    }
+                                                })
+                                            }
+                                        });
+                                    }
+                                </script>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputName">店名</label>
+                                    <input type="email" class="form-control" id="inputName" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputCategory">所属类别</label>
+                                    <select id="inputCategory" class="form-control">
+                                        <option selected>主食</option>
+                                        <option>小吃</option>
+                                        <option>甜品</option>
+                                        <option>饮品</option>
+                                        <option>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputRecommand">冷门美食名称</label>
+                                <input type="text" class="form-control" id="inputRecommand" placeholder="若有多个，用空格隔开">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTag">标签</label>
+                                <input type="text" class="form-control" id="inputTag" placeholder="若有多个，用空格隔开，如：麻辣 川菜">
+                            </div>
+                            <button type="button" id="btn-submit" class="btn btn-primary btn-submit">提交</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
