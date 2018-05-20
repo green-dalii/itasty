@@ -61,9 +61,13 @@ h1, h2, h3, h4, h5, h6,
 
 .noExtension {
     width: 60%;
-    height: 100px;
     margin: auto;
-    font-size: 23px;
+    padding: 5px;
+    font-size: 1rem;
+    color: #fff;
+    background: #ffbb00db;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px #00000085;
 }
 
 #search_value {
