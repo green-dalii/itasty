@@ -52,6 +52,36 @@
                 <button type="button" class="add-btn btn btn-light btn-lg" id=add-btn>提供情报</button>
             </div>
         </div>
+        <footer class="coding">
+            <div class="row row-footer justify-content-center align-items-center">
+                <div class="col-sm-12">
+                    <h6><small>iTasty 是由 Greener-Dalii 基于Nebulas区块链技术构建的一个去中心化应用,所有代码已开源,智能合约地址:0x;合约哈希:</small></h6>
+                </div>
+                <div class="col-1 col-icon">
+                    <a target="_blank" href="http://www.linkedin.com/in/greener-dalii"><i class="fa fa-linkedin-square fa-icon" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-1 col-icon">
+                    <a target="_blank" href="http://t.me/greenerdalii"><i class="fa fa-telegram fa-icon" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-1 col-icon">
+                    <i data-toggle="modal" data-target="#myModal7" class="fa fa-weixin fa-icon"></i>
+                </div>
+                <div class="col-1 col-icon">
+                    <a href="mailto:654534332@qq.com"><i class="fa fa-envelope fa-icon" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="row row-footer justify-content-center align-items-center">
+                <div class="col-sm-1">
+                    <h6><small>Powered By</small></h6>
+                </div>
+                <div class="col-sm-1 col-icon">
+                    <a target="_blank" href="https://nebulas.io/"><img id="nebulas-img"  src="img/Nebulas.png"></a>
+                </div>
+                <div class="col-sm-1 col-icon">
+                    <a target="_blank" href="https://coding.me"><img id="coding-img" src="img/coding.png"></a>
+                </div>
+            </div>
+        </footer>
     </div>
     <!-- Modal add-on -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -269,15 +299,15 @@
     </div>
     <!-- Modal wechat -->
     <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content" id='wx-modal'>
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <img src="img/wx.jpg">
+                    <div class="modal-body" id="wx-body">
+                        <img id="wx-img" src="img/wx.jpg">
                     </div>
                 </div>
             </div>
@@ -287,36 +317,6 @@
             <i class="fa fa-angle-up"></i>
         </a>
     </p>
-    <footer class="coding">
-        <div class="row row-footer justify-content-center align-items-center">
-            <div class="col-sm-12">
-                <h6><small>iTasty 是由 Greener-Dalii 基于Nebulas区块链技术构建的一个去中心化应用,所有代码已开源,智能合约地址:0x;合约哈希:</small></h6>
-            </div>
-            <div class="col-1 col-icon">
-                <a target="_blank" href="http://www.linkedin.com/in/greener-dalii"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-1 col-icon">
-                <a target="_blank" href="http://t.me/greenerdalii"><i class="fa fa-telegram" aria-hidden="true"></i></a>
-            </div>
-            <div class="col-1 col-icon">
-                <i data-toggle="modal" data-target="#myModal7" class="fa fa-weixin"></i>
-            </div>
-            <div class="col-1 col-icon">
-                <a href="mailto:654534332@qq.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-            </div>
-        </div>
-        <div class="row row-footer justify-content-center align-items-center">
-            <div class="col-sm-1">
-                <h6><small>Powered By</small></h6>
-            </div>
-            <div class="col-sm-1 col-icon">
-                <a target="_blank" href="https://nebulas.io/"><img id="nebulas-img"  src="img/Nebulas.png"></a>
-            </div>
-            <div class="col-sm-1 col-icon">
-                <a target="_blank" href="https://coding.me"><img id="coding-img" src="img/coding.png"></a>
-            </div>
-        </div>
-    </footer>
     <!-- <script src=lib/jquery-3.3.1.min.js></script> -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src=lib/nebPay.js></script>

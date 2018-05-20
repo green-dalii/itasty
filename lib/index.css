@@ -58,6 +58,9 @@ h1, h2, h3, h4, h5, h6,
     height: 100px;
     margin: auto;
 }
+#search-area {
+    padding-bottom: 120px;
+}
 
 .noExtension {
     width: 60%;
@@ -204,6 +207,9 @@ p{
 } */
 .coding {
     background-color: #333;
+    display: block;
+    position: inherit;
+    bottom: 0%;
 }
 
 #coding-img {
@@ -216,7 +222,7 @@ p{
     padding: 5px;
     max-width: fit-content;
 }
-.fa {
+.fa-icon {
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -323,8 +329,14 @@ p{
     color:#FFBB00;
 }
 #wx-modal {
-    width: fit-content;
+    width: 100%;
     margin: auto;
+}
+#wx-body {
+    width: inherit;
+}
+#wx-img {
+    width: inherit;
 }
  /* Cards */
 .cards-area {
