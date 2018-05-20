@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6,
     margin: auto;
 }
 #search-area {
-    padding-bottom: 120px;
+    padding-bottom: 90px;
 }
 
 .noExtension {
@@ -210,6 +210,7 @@ p{
     display: block;
     position: inherit;
     bottom: 0%;
+    padding-top: 20px;
 }
 
 #coding-img {
@@ -221,6 +222,9 @@ p{
 .col-icon {
     padding: 5px;
     max-width: fit-content;
+}
+.col-power {
+    min-width: fit-content;
 }
 .fa-icon {
     color: #FFFFFF;
