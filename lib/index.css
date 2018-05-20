@@ -191,17 +191,35 @@ p{
     display: inline-block;
     font-size: 14px;
 }
-.coding {
-    position: absolute;
-    bottom: 0%;
+/* footer */
+.row-footer {
+    text-align: center;
+    padding: 10px;
 }
-.coding-img {
-    width: 40px;
+/* .footer-title {
+    padding: 20px;
+} */
+.coding {
+    background-color: #333;
 }
 
-footer {
-    max-width: 10px;
+#coding-img {
+    width: 40px;
 }
+#nebulas-img {
+    width: 30px;
+}
+.col-icon {
+    padding: 5px;
+    max-width: fit-content;
+}
+.fa {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+/* footer {
+    max-width: 10px;
+} */
 
 .row{
     margin: 0px;
@@ -301,7 +319,10 @@ footer {
 .modal-title {
     color:#FFBB00;
 }
-
+#wx-modal {
+    width: fit-content;
+    margin: auto;
+}
  /* Cards */
 .cards-area {
     margin-top: 80px;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="img/logo2.png">
     <title>iTasty - 搜巷子</title>
     <!-- <link rel="stylesheet" href="lib/bootstrap-4.0.0-dist/css/bootstrap.min.css"> -->
     <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -21,12 +21,9 @@
                 <img src="img/logo.png">
             </div>
             <div class="name">iTasty</div>
-            <!-- <div class="img logo_rotate">
-                <img src="img/logo.png" alt="">
-            </div> -->
             <div class="descript">
-                <h4>酒香不怕巷子深</h4>
                 <h6>Good wine needs no bush</h6>
+                <h4>酒香不怕巷子深</h4>
                 <h6>构建于区块链的城市冷门美食搜集点！</h6>
             </div>
         </div>
@@ -48,22 +45,6 @@
                 <div class='card-deck' id='cards-deck'></div>
             </div>
         </div>
-        <!-- <div class="row">
-            <div>
-                <input id="search_value" type="text">
-            </div>
-        </div> -->
-        <!-- <div class="result_success hide">
-            <div id=search_banner></div>
-            <p id=search_result> wait for content </p>
-            <div class="author">
-                <i><p> Author:</p> <p id=search_result_author> dasdajkajksdhjasdkjahdkjad</p></i>
-            </div>
-        </div> -->
-
-        <!-- <div class="result_faile hide">
-            嘿～这个地方的冷门美食还藏在巷子里呢，点击 <button class="add-btn btn" id="add">添加情报</button> 让它显露出来吧！
-        </div> -->
         <div class="row add-row justify-content-center align-items-center hide" id=add-area>
             <div class="col-12 col-sm-3" id="add-des">
                 <h6 id="loading-text">载入中...</h6>
@@ -72,10 +53,6 @@
                 <button type="button" class="add-btn btn btn-light btn-lg" id=add-btn>提供情报</button>
             </div>
         </div>
-        <!-- <div class="add_banner hide">
-            <input type="text" id="add_value" placeholder="input contents for your keyword">
-            <button id="push">submit</button>
-        </div> -->
     </div>
     <!-- Modal add-on -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -170,7 +147,7 @@
             </div>
         </div>
     </div>
-    <!-- add-form -->
+    <!-- wechat -->
     <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -291,13 +268,55 @@
             </div>
         </div>
     </div>
+    <!-- Modal wechat -->
+    <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" id='wx-modal'>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="img/wx.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
     <p id="back-top">
         <a href="#top">
             <i class="fa fa-angle-up"></i>
         </a>
     </p>
     <footer class="coding">
-        <img class="coding-img" src="img/coding.png">
+        <div class="row row-footer justify-content-center align-items-center">
+            <div class="col-sm-12">
+                <h6><small>iTasty 是由 Greener-Dalii. 基于Nebulas区块链技术构建的一个去中心化应用,所有代码已开源,智能合约地址:0x;合约哈希:</small></h6>
+            </div>
+            <div class="col-1 col-icon">
+                <a href="http://www.linkedin.com/in/greener-dalii"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-1 col-icon">
+                <a href="http://t.me/greenerdalii"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-1 col-icon">
+                <i data-toggle="modal" data-target="#myModal7" class="fa fa-weixin"></i>
+            </div>
+            <div class="col-1 col-icon">
+                <a href="mailto:654534332@qq.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="row row-footer justify-content-center align-items-center">
+            <div class="col-sm-2">
+                <h6><small>技术支持</small></h6>
+            </div>
+            <div class="col-sm-1 col-icon">
+                <a href="https://nebulas.io/"><img id="nebulas-img"  src="img/Nebulas.png"></a>
+            </div>
+            <div class="col-sm-1 col-icon">
+                <a href="https://coding.me"><img id="coding-img" src="img/coding.png"></a>
+            </div>
+        </div>
     </footer>
     <!-- <script src=lib/jquery-3.3.1.min.js></script> -->
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
