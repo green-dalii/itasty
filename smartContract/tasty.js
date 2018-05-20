@@ -53,15 +53,6 @@ var TastyDictionary = function () {
             return o.toString();
         }//set 保存方法:TastyItem Object -> Strings
     });
-    // LocalContractStorage.defineProperty(this, "size");
-    // LocalContractStorage.defineMapProperty(this, "repo", {
-    //     parse: function (text) {
-    //         return new TastyItem(text);
-    //     },//get 读取方法:Strings -> TastyItem Object
-    //     stringify: function (o) {
-    //         return o.toString();
-    //     }//set 保存方法:TastyItem Object -> Strings
-    // });
 };
 
 TastyDictionary.prototype = {
