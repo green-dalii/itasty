@@ -302,6 +302,12 @@ p{
 .row-map{
     display: block;
 }
+.input-error {
+    border: #ff0000a1 1px solid;
+    box-shadow: #ff000061 0px 0px 15px 0px;
+    /* color: #ff3e3e; */
+}
+
 .search_btn {
     margin: 5px 0px;
 }
